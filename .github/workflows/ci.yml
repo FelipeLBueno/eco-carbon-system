@@ -1,0 +1,32 @@
+name: Integração Contínua (CI)
+
+# O pipeline será disparado a cada push ou pull request na branch main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  testar-projeto:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Copia o código do repositório para a máquina virtual do GitHub
+    - name: Copiar código do repositório
+      uses: actions/checkout@v4
+
+    # 2. Instala o ambiente Node.js na máquina virtual
+    - name: Configurar o Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
+
+    # 3. Instala as dependências do projeto (Express, TypeScript, Jest)
+    - name: Instalar dependências
+      run: npm install
+
+    # 4. Roda a suíte de testes automatizados que você criou!
+    - name: Executar testes automatizados
+      run: npm test

@@ -1,0 +1,28 @@
+{
+  "name": "creditos-carbono",
+  "version": "1.0.0",
+  "description": "Um sistema de software orientado a objetos para simulação, cálculo de pegada de carbono e transações auditadas de créditos de compensação ambiental, alinhado ao **ODS 13 (Ação Contra a Mudança Global do Clima)** da Agenda 2030 da ONU.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeLBueno/eco-carbon-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/FelipeLBueno/eco-carbon-system/issues"
+  },
+  "homepage": "https://github.com/FelipeLBueno/eco-carbon-system#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.9.3",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.11",
+    "typescript": "^6.0.3"
+  }
+}

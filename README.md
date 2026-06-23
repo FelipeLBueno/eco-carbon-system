@@ -26,14 +26,11 @@ O projeto adota uma **Arquitetura em Camadas (Layered Architecture)** para garan
 
 As regras de cálculo e o fluxo de transações são validados rigorosamente através de testes unitários automatizados.
 
-Para rodar os testes localmente:
+Para rodar os testes localmente: Start para inicar o front end
 
 ```bash
 
 npm test
 
-Ou com o front end:
-
-```bash
-
 npm start
+

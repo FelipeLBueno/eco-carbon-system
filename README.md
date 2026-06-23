@@ -16,13 +16,13 @@ O **EcoCarbon System** gerencia as regras complexas de conformidade ambiental de
 
 O projeto adota uma **Arquitetura em Camadas (Layered Architecture)** para garantir o isolamento total das regras de negócio em relação a bancos de dados ou interfaces de usuário. Isso nos permite garantir 100% de testabilidade do núcleo do sistema.
 
-### Pilares de POO Aplicados
+### Pilares Aplicados
 
 * **Encapsulamento Estrito:** Entidades críticas como `ContaCarbono` possuem estados que mudam e são protegidos. Saldos e históricos não podem ser alterados diretamente via setters públicos, apenas por métodos de domínio controlados (ex: `debitar()`, `creditar()`).
 * **Polimorfismo & Interfaces:** Uso de interfaces para desacoplamento de serviços e estratégias de cálculo, permitindo que novos escopos de poluentes sejam adicionados sem alterar o código.
 * **Tratamento de Exceções Customizado:** Lançamento de exceções de domínio explícitas (ex: `SaldoInsuficienteException`, `CreditoNaoAuditadoException`) impedindo que o sistema atinja estados inconsistentes.
 
-## 🧪 Testes Automatizados
+## Testes Automatizados
 
 As regras de cálculo e o fluxo de transações são validados rigorosamente através de testes unitários automatizados.
 
@@ -31,3 +31,9 @@ Para rodar os testes localmente:
 ```bash
 
 npm test
+
+Ou com o front end:
+
+```bash
+
+npm start

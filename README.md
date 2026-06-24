@@ -14,7 +14,7 @@ O **EcoCarbon System** gerencia as regras complexas de conformidade ambiental de
 
 ## Arquitetura e Engenharia de Software
 
-O projeto adota uma **Arquitetura em Camadas (Layered Architecture)** para garantir o isolamento total das regras de negócio em relação a bancos de dados ou interfaces de usuário. Isso nos permite garantir 100% de testabilidade do núcleo do sistema.
+O projeto adota uma **Arquitetura em Camadas** para garantir o isolamento total das regras de negócio em relação a bancos de dados ou interfaces de usuário. Isso nos permite garantir 100% de testabilidade do núcleo do sistema.
 
 ### Pilares Aplicados
 

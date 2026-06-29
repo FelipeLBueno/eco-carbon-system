@@ -71,5 +71,6 @@ O framework Jest vai rodar os arquivos de teste na pasta tests/. Ele simula cen�
 
 O que acontece: O ts-node-dev vai compilar e rodar o arquivo src/main.ts, inicializando um servidor web local via Express na porta 3000.
 
-   Como acessar: Após o comando iniciar, abra o seu navegador de internet e acesse o endereço:
-    👉 <http://localhost:3000>
+   ### Como acessar
+   Após o comando iniciar, abra o seu navegador de internet e acesse o endereço:
+   <http://localhost:3000>

@@ -26,11 +26,50 @@ O projeto adota uma **Arquitetura em Camadas** para garantir o isolamento total 
 
 As regras de cálculo e o fluxo de transações são validados rigorosamente através de testes unitários automatizados.
 
-Para rodar os testes localmente: Start para inicar o front end
+### Como Executar o Projeto (Passo a Passo)
 
-```bash
+Siga as instruções abaixo para configurar o ambiente e rodar a aplicação no seu computador (Windows/Linux/Mac).
 
-npm test
+### Pré-requisitos (Instalação do Node.js e NPM)
 
-npm start
+Caso ainda não tenha o ambiente do Node instalado:
 
+1. Acesse o site oficial do [Node.js](https://nodejs.org/).
+2. Baixe e instale a versão **LTS** (Recomendada). O **NPM** (gerenciador de pacotes) é instalado automaticamente.
+3. Para confirmar se a instalação deu certo, abra o terminal e digite:
+
+   ```bash
+   node -v
+   npm -v
+
+4. Depois abra a pasta do projeto no VS Code e instale as dependências necessárias executando:
+
+   ```Bash
+   npm install
+
+## Comandos Disponíveis
+
+O projeto possui duas formas independentes de execução.
+
+1. Validar o Motor de Regras (Back-end)
+
+* Se o objetivo for validar a inteligência do sistema, os cálculos químicos/ambientais e as travas de segurança isoladamente, execute a suíte de testes automatizados:
+
+   ```Bash
+   npm test
+
+### Como funciona?
+
+O framework Jest vai rodar os arquivos de teste na pasta tests/. Ele simula cenários reais (como tentativas de fraudar créditos ou cálculos de poluição por transporte e energia) e valida se as classes se comportaram corretamente.
+
+2. Iniciar a Interface Visual (Front-end + Servidor)
+
+* Se o objetivo for realizar o "tour demonstrativo" (demo) do software através de um painel visual no navegador, ligue o servidor web:
+
+   ```Bash
+   npm start
+
+O que acontece: O ts-node-dev vai compilar e rodar o arquivo src/main.ts, inicializando um servidor web local via Express na porta 3000.
+
+   Como acessar: Após o comando iniciar, abra o seu navegador de internet e acesse o endereço:
+    👉 <http://localhost:3000>

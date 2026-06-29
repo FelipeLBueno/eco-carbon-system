@@ -14,6 +14,24 @@ export class Organizacao {
   ) {}
 
   registrarAtividade(atividade: RegistroAtividade): void {
+    // 1. Descobre quanto essa nova atividade vai poluir usando a Strategy
+    const estrategia = this._estrategiasCalculo.get(atividade.tipo);
+    if (!estrategia) {
+      throw new Error(`Regra de cálculo não encontrada para: ${atividade.tipo}`);
+    }
+    
+    const impactoDestaAtividade = estrategia.calcular(atividade.quantidade);
+    
+    // 2. Simula como ficaria o balanço ecológico DEPOIS dessa atividade
+    const balancoAtual = this.obterBalancoCarbonoEmKg();
+    const balancoFuturo = balancoAtual - impactoDestaAtividade;
+
+    // 3. Trava Ambiental ODS 13: Limite máximo de dívida é de -2000 kg (2 Toneladas)
+    if (balancoFuturo < -2000) {
+      throw new Error(`Bloqueio Ambiental! Essa ação deixaria a empresa com ${balancoFuturo} kg. O limite é -2000 kg. Compre créditos de carbono para continuar operando.`);
+    }
+
+    // Se passou na regra de segurança, registra a atividade
     this._atividades.push(atividade);
   }
 

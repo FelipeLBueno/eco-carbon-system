@@ -84,16 +84,30 @@
     }
 
     async function poluir(tipo, quantidade) {
-      await fetch('/api/poluir', {
+      const res = await fetch('/api/poluir', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ tipo, quantidade })
       });
+      
+      if (!res.ok) {
+        const dados = await res.json();
+        alert("\n" + dados.error);
+        return; 
+      }
+
       atualizarTela();
     }
 
     async function comprarCredito() {
-      await fetch('/api/comprar', { method: 'POST' });
+      const res = await fetch('/api/comprar', { method: 'POST' });
+      
+      if (!res.ok) {
+        const dados = await res.json();
+        alert("\n" + dados.error);
+        return;
+      }
+
       atualizarTela();
     }
 
